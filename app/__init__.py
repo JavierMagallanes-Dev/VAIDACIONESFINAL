@@ -21,14 +21,15 @@ def create_app():
     from app.routes.alumno import alumno_bp
     from app.routes.curso import curso_bp
     from app.routes.calculo import calculo_bp
+    from app.routes.views import views_bp
     
     app.register_blueprint(auth_bp, url_prefix='/api')
     app.register_blueprint(alumno_bp, url_prefix='/api')
     app.register_blueprint(curso_bp, url_prefix='/api')
-    app.register_blueprint(calculo_bp, url_prefix='/api')
+    app.register_blueprint(views_bp)
     
-    # Ruta de prueba
-    @app.route('/')
+    # Ruta de API info
+    @app.route('/api')
     def index():
         return {
             'success': True,

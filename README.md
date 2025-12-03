@@ -9,6 +9,7 @@ Sistema de gestión académica diseñado para pruebas de rendimiento con JMeter.
 - **Consultas Pesadas**: JOINs múltiples para pruebas de latencia
 - **Cálculos en Memoria**: Procesamiento de promedios sin I/O de BD
 - **Base de Datos MySQL**: Esquema completo con índices optimizados
+- **Interfaz Web**: UI minimalista y responsive (HTML/CSS/JS vanilla)
 
 ## 🛠️ Tecnologías
 
@@ -33,7 +34,16 @@ flask-alumno/
 │   │   ├── auth.py          # POST /login
 │   │   ├── alumno.py        # CRUD alumnos
 │   │   ├── curso.py         # Consultas de cursos
-│   │   └── calculo.py       # Cálculos en memoria
+│   │   ├── calculo.py       # Cálculos en memoria
+│   │   └── views.py         # Rutas de la UI
+│   ├── static/              # Archivos estáticos
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── app.js
+│   ├── templates/           # Plantillas HTML
+│   │   ├── login.html
+│   │   └── dashboard.html
 │   └── utils/               # Utilidades
 │       ├── database.py      # Conexión MySQL
 │       └── auth.py          # JWT helpers
@@ -105,7 +115,25 @@ Este script:
 python run.py
 ```
 
-El servidor estará disponible en: `http://localhost:5000`
+El servidor estará disponible en: `http://localhost:5001`
+
+## 🌐 Acceso a la Interfaz Web
+
+Abre tu navegador en: **http://localhost:5001**
+
+**Credenciales:**
+- Usuario: `admin`
+- Contraseña: `admin123`
+
+La interfaz incluye:
+- 📊 Dashboard con estadísticas
+- 👥 Registro y consulta de alumnos
+- 📚 Estadísticas de cursos
+- 🧮 Calculadora de promedios
+
+> 📖 Para más detalles sobre la UI, revisa: `UI_GUIDE.md`
+
+---
 
 ## 📡 Endpoints de la API
 
